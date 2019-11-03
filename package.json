@@ -1,0 +1,21 @@
+{
+    "name": "coco",
+    "version": "1.0.0",
+    "description": "Cognigy-CoCo integration",
+    "main": "build/module.js",
+    "scripts": {
+        "test": "node test/test.js",
+        "build": "tsc -p ."
+    },
+    "author": "alex@a-i.com",
+    "license": "ISC",
+    "dependencies": {
+        "@aleximp/coco-sdk-nodejs": "^0.1.5",
+        "uuid": "^3.3.3"
+    },
+    "devDependencies": {
+        "@types/node": "^10.12.5",
+        "@types/uuid": "^3.4.5",
+        "typescript": "^3.1.6"
+    }
+}
