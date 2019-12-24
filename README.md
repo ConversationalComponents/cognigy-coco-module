@@ -16,6 +16,7 @@ Use instructions
   - Input a component id (for example, "namer_vp3")
   - Input your dev key
   - Component is now ready
+  - tip: when testing for component status, also test for context structure, like ``` (!cc.coco) || !!cc.coco&&!!cc.coco.completed&&(!cc.coco.completed.namer_vp3||cc.coco.completed.namer_vp3 === false) ``` 
   
 API
   - Coco modules write to Cognigy Context under "coco"
