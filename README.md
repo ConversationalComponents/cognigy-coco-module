@@ -1,6 +1,9 @@
-Cognigy-CoCo Integration
+Cognigy-[CoCo](https://www.conversationalcomponents.com) Integration
 
 [Installation instructions](https://docs.cognigy.com/docs/integration-framework#section-4-upload-your-module)
+
+[Tutorial video](https://www.youtube.com/watch?v=pNab4QxDI8E)
+
   - Download cognigy-coco-module.zip from /release folder
   - Login to Cognigy
   - Click on your profile (it's in upper right corner)
@@ -32,6 +35,6 @@ API
   } 
   ```
   
-  
-  
+  [Conversational Components documentation](https://docs.conversationalcomponents.com/)
 
+  For more components and their customizations please see our [Marketplace](https://marketplace.conversationalcomponents.com/)
