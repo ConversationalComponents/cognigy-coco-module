@@ -10,13 +10,14 @@
     "author": "alex@a-i.com",
     "license": "ISC",
     "dependencies": {
-        "request": "^2.88.0",
-        "uuid": "^3.3.3"
+        "request": "^2.88.2",
+        "request-promise": "^4.2.5",
+        "uuid": "^7.0.1"
     },
     "devDependencies": {
-        "@types/node": "^10.12.5",
-        "@types/uuid": "^3.4.6",
-        "typescript": "^3.1.6",
-        "@types/request": "^2.48.3"
+        "@types/node": "^13.7.6",
+        "@types/request-promise": "^4.1.45",
+        "@types/uuid": "^7.0.0",
+        "typescript": "^3.8.2"
     }
 }

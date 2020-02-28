@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const uuid = require("uuid/v4");
-const request = require("request");
+const rp = require("request-promise");
 class ComponentSession {
     constructor(p) {
         this.component_id = "";
@@ -19,9 +19,9 @@ class ComponentSession {
             const payload = {};
             user_input && (payload.user_input = user_input);
             context && (payload.context = context);
-            request({
+            rp({
                 method: "POST",
-                url: `https://app.coco.imperson.com/api/exchange/${this.component_id}/${this.session_id}`,
+                url: `https://marketplace.conversationalcomponents.com/api/exchange/${this.component_id}/${this.session_id}`,
                 body: JSON.stringify(payload),
                 headers: { "api-key": this.developer_key }
             }, function (error, response, body) {

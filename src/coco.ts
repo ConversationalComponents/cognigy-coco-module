@@ -1,5 +1,5 @@
 import uuid = require("uuid/v4");
-import request = require("request");
+import * as rp from "request-promise";
 
 export type CocoResponse = {
     response: string;
@@ -31,10 +31,10 @@ export class ComponentSession {
             const payload = {} as any;
             user_input && (payload.user_input = user_input);
             context && (payload.context = context);
-            request(
+            rp(
                 {
                     method: "POST",
-                    url: `https://app.coco.imperson.com/api/exchange/${this.component_id}/${this.session_id}`,
+                    url: `https://marketplace.conversationalcomponents.com/api/exchange/${this.component_id}/${this.session_id}`,
                     body: JSON.stringify(payload),
                     headers: {"api-key": this.developer_key}
                 },
