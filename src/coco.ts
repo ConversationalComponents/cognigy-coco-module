@@ -35,7 +35,7 @@ export class ComponentSession {
             rp(
                 {
                     method: "POST",
-                    url: `https://marketplace.conversationalcomponents.com/api/exchange/${this.component_id}/${this.session_id}`,
+                    url: `https://cocohub.ai/api/exchange/${this.component_id}/${this.session_id}`,
                     body: JSON.stringify(payload),
                     headers: {"api-key": this.developer_key}
                 },

@@ -34,7 +34,7 @@ async function CoCo(
     context.session_id = session_id;
     input.actions.addToContext(store, context, "simple");
 
-    const reply = await conv.call(text, context.updated_context);
+    const reply = await conv.call(text, context.updated_context, args.source_language_code);
     if (reply instanceof Error) throw reply;
 
     if (reply.component_done) {
