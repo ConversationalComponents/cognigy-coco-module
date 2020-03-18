@@ -14,11 +14,12 @@ class ComponentSession {
     reset(session_id = uuid()) {
         this.session_id = session_id;
     }
-    call(user_input, context) {
+    call(user_input, context, source_language_code) {
         return new Promise((resolve, reject) => {
             const payload = {};
             user_input && (payload.user_input = user_input);
             context && (payload.context = context);
+            source_language_code && (payload.source_language_code = source_language_code);
             rp({
                 method: "POST",
                 url: `https://marketplace.conversationalcomponents.com/api/exchange/${this.component_id}/${this.session_id}`,

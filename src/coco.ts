@@ -26,11 +26,12 @@ export class ComponentSession {
         this.session_id = session_id;
     }
 
-    call(user_input?: string, context?: any) {
+    call(user_input?: string, context?: any, source_language_code?: string) {
         return new Promise<CocoResponse | Error>((resolve, reject) => {
             const payload = {} as any;
             user_input && (payload.user_input = user_input);
             context && (payload.context = context);
+            source_language_code && (payload.source_language_code = source_language_code);
             rp(
                 {
                     method: "POST",

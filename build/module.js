@@ -7,6 +7,7 @@ const coco_1 = require("./coco");
  * @arg {CognigyScript} `component` name of the component
  * @arg {CognigyScript} `developerKey` optional developer API key
  * @arg {Boolean} `stopOnError` Whether to stop on error or continue
+ * @arg {CognigyScript} `source_language_code` optional language code
  */
 async function CoCo(input, args) {
     if (!args.component) {

@@ -6,8 +6,12 @@ import {ComponentSession} from "./coco";
  * @arg {CognigyScript} `component` name of the component
  * @arg {CognigyScript} `developerKey` optional developer API key
  * @arg {Boolean} `stopOnError` Whether to stop on error or continue
+ * @arg {CognigyScript} `source_language_code` optional language code
  */
-async function CoCo(input: IFlowInput, args: {component: string; developerKey: string; stopOnError: boolean}) {
+async function CoCo(
+    input: IFlowInput,
+    args: {component: string; developerKey: string; stopOnError: boolean; source_language_code: string}
+) {
     if (!args.component) {
         throw new Error("No component provided");
     }
