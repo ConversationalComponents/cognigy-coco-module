@@ -3,14 +3,21 @@ import {ComponentSession} from "./coco";
 
 /**
  * Chats with CoCo
- * @arg {CognigyScript} `component` name of the component
- * @arg {CognigyScript} `developerKey` optional developer API key
+ * @arg {String} `component` name of the component
+ * @arg {String} `developerKey` optional developer API key
  * @arg {Boolean} `stopOnError` Whether to stop on error or continue
- * @arg {CognigyScript} `source_language_code` optional language code
+ * @arg {String} `source_language_code` optional language code
+ * @arg {String} `bot_name` optional bot name. If this is left empty and context or coco.context has bot_name, this field will be filled from context or context.coco respectively.
  */
 async function CoCo(
     input: IFlowInput,
-    args: {component: string; developerKey: string; stopOnError: boolean; source_language_code: string}
+    args: {
+        component: string;
+        developerKey: string;
+        stopOnError: boolean;
+        source_language_code: string;
+        bot_name: string;
+    }
 ) {
     if (!args.component) {
         throw new Error("No component provided");
@@ -26,6 +33,8 @@ async function CoCo(
     const store = "coco";
     const rawContext = input.context.getFullContext() || {};
     const context = {...rawContext[store]} || {};
+    const botName = args.bot_name || context.bot_name || rawContext.bot_name || "";
+    context.bot_name = botName;
     if (!context.completed) context.completed = {};
     if (!context.failed) context.failed = {};
     if (!context.updated_context) context.updated_context = {};
