@@ -34,11 +34,12 @@ async function CoCo(
     const rawContext = input.context.getFullContext() || {};
     const context = {...rawContext[store]} || {};
     const botName = args.bot_name || context.bot_name || rawContext.bot_name || "";
-    context.bot_name = botName;
+    rawContext.bot_name = botName;
     if (!context.completed) context.completed = {};
     if (!context.failed) context.failed = {};
     if (!context.updated_context) context.updated_context = {};
     const session_id = context.session_id || uuid();
+    context.updated_context.bot_name = botName;
     const conv = new ComponentSession({component_id: component, developer_key: args.developerKey, session_id});
     context.session_id = session_id;
     input.actions.addToContext(store, context, "simple");
